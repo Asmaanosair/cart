@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: docker/app/Dockerfile
+    image: cart_app
+    container_name: cart_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    expose:
+      - "9000"
+    networks:
+      - cart_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: cart_nginx
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx:/etc/nginx/conf.d
+    networks:
+      - cart_network
+
+networks:
+  cart_network:
+    driver: bridge
