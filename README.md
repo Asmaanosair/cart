@@ -40,7 +40,7 @@ docker-compose up -d --build
 
 ---
 
-## 🛠️ Useful Docker Commands
+##  Useful Docker Commands
 
 ### View logs
 ```bash
