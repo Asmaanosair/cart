@@ -4,7 +4,7 @@ Laravel e-commerce application with Vue.js frontend, shopping cart, and automate
 
 ---
 
-## 🚀 Quick Start with Docker
+## Docker
 
 ### Requirements
 - Docker
@@ -34,7 +34,7 @@ docker-compose up -d --build
 
 ---
 
-## 📱 Access the Application
+## Access the Application
 
 **Application URL:** http://localhost:8080
 
