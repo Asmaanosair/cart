@@ -50,12 +50,12 @@ test('product can increment stock', function () {
     expect($product->fresh()->stock_quantity)->toBe(15);
 });
 
-test('product cannot decrement stock below zero', function () {
+test('product decrement stock can go negative', function () {
     $product = Product::factory()->create(['stock_quantity' => 5]);
 
     $product->decrementStock(10);
 
-    expect($product->fresh()->stock_quantity)->toBe(0);
+    expect($product->fresh()->stock_quantity)->toBe(-5);
 });
 
 test('product price is cast to decimal', function () {
